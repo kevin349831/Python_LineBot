@@ -15,15 +15,6 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('8suvXUHjBNey25GGX1kvuip5RM2vNUyIxEgMqZVJYKW7cJuS3qKd9edtw5Y5s3UATnrdfEMjj3r/69SiztrtIcWLdqWpGmsIwmYIhAUGvdDbqOxzMiWmywaQMgSFbCb/ewJA0v2581gHdU/ZfK4OBAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('b6b6b707c23e48e6b8f3b588ffdc3146')
 
-#this part is my code
-
-def getPrediction(news):
-    return('hello'+news)
-
-
-
-
-#this part is my code
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -46,7 +37,7 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text = getPrediction(event.message.text))) #event.message.text
+        TextSendMessage(text = event.message.text)) #event.message.text
 
 
 if __name__ == "__main__":
