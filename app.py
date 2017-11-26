@@ -163,6 +163,7 @@ def getPred(code):
     plt.plot(avgli)
     plt.savefig('Pred.png')
     
+    return(preds)
     
 
 
